@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    display: grid;
+    justify-content: center;
+    color: white;
+    position: relative;
+    top:30px;
+
+}
+body{
+    background-color: olivedrab;
+}
+.my-form{
+    display: grid;
+   justify-content:right;
+    grid-template-columns: repeat(1, 250px);
+   gap: 10px;
+   position: relative;
+  top: 50px;
+}
+ label{
+color: white;
+position: relative;
+top: 50px;
+ right: 180px;
+ }
+input{
+    border-radius: 20px;
+   position: relative;
+    top: 50px;
+  right: 400px;
+}
+
+.per1{
+    color: white;
+    font-size: 14px;
+    position: relative;
+    display: flex;
+}
+
+a {
+    color: white;
+    font-size: 20px;
+    position: relative;
+}
+
+
+
+.per1 label{
+   position: absolute;
+   font-size: 20px;
+   right:340px ;
+   top: 230px;
+   padding: 8px;
+
+}
+
+
+.per1 a{
+  position: relative;
+  font-size: 20px;
+   padding: 8px;
+    top: 229px;
+    left: 652px;
+
+}
+
+ #btn{
+   background-color: #2d2828;
+    color: white;
+   width: 100px;
+    padding: 10px 15px;
+    position: relative;
+
+ }
+
+
+
+
+h3{
+    color: white;
+}
+
+
+.error{
+    padding: 5px;
+    background-color: red;
+    color: white;
+    font-size: 1em;
+
+
+}
+
+.btn{
+    width: 100px;
+    position: relative;
+    right: 150px;
+ padding: 10px 15px;
+    border-radius: 30px;
+    margin-top: 30px;
+     background-color: #2d2828;
+    color: white;
+}
+.manu{
+    display: flex;
+    justify-content: center;
+   gap: 10px;
+
+}
+
+.link{
+    text-decoration: none;
+    color: white;
+    position: relative;
+   right: 470px;
+   bottom: 230px;
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }

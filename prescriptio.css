@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: olivedrab;
+}
+h1{
+    color: white;
+    position: relative;
+}
+h1{
+    position:absolute ;
+    left:600px;
+
+}
+.my-form lable {
+    display: block;
+
+}
+.headline{
+    position: relative;
+    animation: head ;
+   animation-duration: 3s;
+    animation-fill-mode : forwards}
+
+.my-form{
+display: grid;
+     grid-template-columns: repeat(1, 450px);
+    justify-content: right;
+    gap: 10px;
+    position: relative;
+    animation: information ;
+   animation-duration: 3s;
+    animation-fill-mode : forwards
+}
+label{
+
+    padding: 5px;
+    color: white;
+
+}
+.my-group:nth-child(4),.my-group:nth-child(7),
+.my-group:nth-child(10),.my-group:nth-child(12){
+
+     position: relative ;
+        right: 450px;
+        top: 80px;
+        border-radius: 20px;
+}
+.my-group:nth-child(2),.my-group:nth-child(5),
+.my-group:nth-child(8),.my-group:nth-child(11){
+    position: relative;
+     top: 85px;
+}
+.my-button{
+    position: relative;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    background-color: #2d2828;
+     color: white;
+      animation: btn ;
+   animation-duration: 3s;
+    animation-fill-mode : forwards
+}
+.my-button{
+    position: absolute;
+   left: 70px;
+}
+
+
+
+#btn{
+    position: relative;
+    right: 600px;
+    top:150px;
+     background-color: #2d2828;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 30px;
+    margin-top: 40px;
+    width: 100px;
+}
+
+.msg{
+    position: relative;
+    top: 50px;
+    right: 50px;
+}
+
+.msg2{
+    position: relative;
+    top: 50px;
+    right: 300px;
+}
+.msg3{
+    position: relative;
+    top: 50px;
+    right: 300px;
+}
+
+.msg4{
+    position: relative;
+    top: 50px;
+    right: 300px;
+}
+.error{
+    padding: 5px;
+    background-color: red;
+    color: white;
+    font-size: 1em;
+
+
+}
+.error2{
+    padding: 5px;
+    background-color: red;
+    color: white;
+    font-size: 1em;
+    width: 200px;
+
+}
+.manu{
+    display: flex;
+    justify-content: center;
+   gap: 10px;
+
+}
+
+.link{
+    text-decoration: none;
+    color: white;
+    position: relative;
+   right: 400px;
+   bottom:350px;
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }

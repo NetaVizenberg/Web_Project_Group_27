@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: olivedrab;
+}
+
+h1 {
+    color: white;
+    position: absolute;
+    left:570px;
+    top:30px;
+
+}
+
+.my-form label {
+
+    color: white;
+    display: block;
+
+
+}
+.container {
+    display: flex;
+     justify-content:center;
+}
+
+.center-left,
+.center-right {
+    display: flex;
+    flex-direction: column;
+
+}
+#lable1{
+    position: relative;
+    top: 90px;
+    left: 70px;
+
+}
+
+#lable2{
+    position: relative;
+    top: 90px;
+   left: 110px;
+}
+
+#lable3{
+    position: relative;
+    top:10px;
+   left: 575px;
+}
+
+
+.center-left{
+    position: relative;
+    right: 20px;
+}
+.center-right{
+    position: relative;
+    left: 20px;
+}
+
+#input-1,
+#input-2,
+#input3,
+#my-message {
+    border-radius: 20px;
+    margin-top: 100px;
+
+}
+
+#input-1,
+#input-2,
+#input3{
+    width: 250px;
+}
+
+#input3{
+    position: relative;
+    top: -80px;
+   left: 510px;
+
+}
+
+.container2 {
+    display: flex;
+
+}
+
+
+
+
+
+textarea {
+    border-radius: 20px;
+    width: 600px;
+
+    margin-top: 10px;
+    height: 250px;
+}
+
+
+
+
+#text{
+    position: relative;
+    top: 60px;
+    left: 530px;
+}
+#my-message {
+    position: relative;
+     bottom: 30px;
+
+}
+button{
+    position: relative;
+    left: 300px;
+     bottom:40px;
+    background-color: #2d2828;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 30px;
+    margin-top: 40px;
+    width: 100px;
+}
+.btn{
+    position: relative;
+    left: 300px;
+  bottom:40px;
+   background-color: #2d2828;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 30px;
+    margin-top: 40px;
+    width: 100px;
+
+
+}
+.error{
+    padding: 5px;
+    background-color: red;
+    color: white;
+    font-size: 1em;
+    width:200px;
+   height:30px;
+
+}
+.error2{
+    padding: 5px;
+    background-color: red;
+    color: white;
+    font-size: 1em;
+    width: 200px;
+
+}
+.error3{
+    padding: 5px;
+    background-color: red;
+    color: white;
+    font-size: 1em;
+    width: 300px;
+
+}
+
+.msg{
+    position:relative;
+    top: 20px;
+    left: 800px;
+}
+.msg2{
+    position:relative;
+    top:80px;
+
+}
+.msg3{
+    position:relative;
+    top:80px;
+   left:200px
+}
+.manu{
+    display: flex;
+    justify-content: center;
+   gap: 10px;
+
+}
+
+.link{
+    text-decoration: none;
+    color: white;
+    position: relative;
+   right: 400px;
+   bottom:550px;
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }

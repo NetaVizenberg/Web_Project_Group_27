@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: olivedrab;
+}
+h1{
+    color: white;
+    position: relative;
+    animation: head ;
+   animation-duration: 3s;
+    animation-fill-mode : forwards
+}
+h1{
+    position:absolute ;
+    left:600px;
+     top: 40px;
+}
+.my-form{
+    display: grid;
+       grid-template-columns: repeat(1, 250px);
+    justify-content: right;
+    gap: 10px;
+    position: relative;
+
+    top: 80px;
+}
+.my-form label{
+
+    padding: 5px;
+    color: white;
+    display: block;
+}
+.my-group:nth-child(1){
+    position: relative;
+    left: 10px;
+}
+.my-group:nth-child(3){
+    position: relative;
+     border-radius: 20px;
+     right: 200px;
+     ;
+ }
+.my-group:nth-child(8){
+    position: relative;
+    right:80px ;
+     padding: 10px;
+    border-radius: 20px;
+    width: 40%;
+}
+.my-form textarea {
+   position: relative;
+    width: 600px;
+    height: 250px; ;
+    right: 550px;
+    border-radius: 20px
+
+}
+
+.btn{
+display: flex;
+position: relative;
+right: 800px;
+gap: 20px;
+bottom:40px
+}
+button{
+    background-color: #2d2828;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 30px;
+    margin-top: 40px;
+    position: relative;
+    left: 50px;
+
+}
+#in{
+    background-color: #2d2828;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 30px;
+    margin-top: 40px;
+    position: relative;
+    left: 50px;
+}
+.msg{
+    position:relative;
+    right: 770px;
+
+}
+.msg2{
+    position:relative;
+    right: 270px;
+
+}
+
+
+.error{
+    padding: 5px;
+    background-color: red;
+    color: white;
+    font-size: 1em;
+
+
+}
+.error2{
+    padding: 5px;
+    background-color: red;
+    color: white;
+    font-size: 1em;
+    width: 300px;
+
+}
+.manu{
+    display: flex;
+
+  gap: 10px;
+
+}
+.link{
+    text-decoration: none;
+    color: white;
+    position: relative;
+     bottom: 550px;
+      left: 30px;
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }

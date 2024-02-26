@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+  background-image: url("pics/img.png");
+
+}
+.headline{
+
+    display: grid;
+    color: #eaff82;
+    justify-content: center;
+    padding: 5px
+}
+
+.headline{
+    position: relative;
+    top: 30px;
+    font-size:40px ;
+
+
+
+}
+
+.manu{
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    gap: 30px;
+    justify-content: center;
+    position: relative;
+    animation: buttons ;
+   animation-duration: 3s;
+    animation-fill-mode : forwards
+}
+
+.button {
+    padding: 1rem 2rem;
+    border-radius: 30px;
+   background-color: #eaff82;
+}
+
+
+.button:nth-child(1),.button:nth-child(2){
+    position: relative;
+   top: 100px;
+   text-decoration: none;
+   color: black;
+   text-align: center;
+    border: 2px solid black;
+}
+
+
+
+
+.button:nth-child(3),.button:nth-child(4){
+   position: relative;
+   top: 150px;
+   text-align: center;
+    text-decoration: none;
+    color: black;
+     border: 2px solid black;
+
+}
+
+
+
+
+
+.button:nth-child(5) {
+     position: relative;
+    top: 150px;
+   text-align: center;
+    text-decoration: none;
+    color: black;
+     border: 2px solid black;
+     left: 110px;
+}
+
+
+
+.headline{
+    position: relative;
+    animation: head ;
+   animation-duration: 3s;
+    animation-fill-mode : forwards
+}
+@keyframes head {
+    0%{
+        top: -80px ;
+}
+    100%{
+        top: 30px;
+    }
+
+}
+@keyframes buttons {
+    0%{
+        right: -750px ;
+}
+    100%{
+     right:0px;
+    }
+
+}
