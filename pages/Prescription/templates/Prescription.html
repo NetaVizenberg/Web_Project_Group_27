@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %} מרשם {% endblock %}
+{% include('Prescription.html') %}
+{% block page_body_header_content %} צור חשבון {% endblock %}
+{% block page_body_main_content %}
+<form class="my-form" action="" method="get">
+    <h4 class="msg"> </h4>
+     <label for="gram" class="my-group "> : כמות</label>
+       <h4 class="msg2">  </h4>
+        <input id="gram"  class="my-group" type="number" name=" phone number">
+  <label for="MyCBD" class="my-group" >: CBD  </label>
+    <h4 class="msg3" >  </h4>
+        <input id="MyCBD" class="my-group" type="number" name=" CBD">
+       <label class="my-group" >: THC  </label>
+         <h4 class="msg4">  </h4>   <input id="THC" class="my-group" type="number" name=" THC">
+  <label for="THC" class="my-group" > : צורה</label>
+        <select  class="my-group" name="shape">
+        <option  value=" flower"> פרח </option>
+        <option value=" oil"> שמן </option>
+        </select>
+      <input id="btn" type="submit" value="הגש" >
+     </form>
+{% endblock %}
