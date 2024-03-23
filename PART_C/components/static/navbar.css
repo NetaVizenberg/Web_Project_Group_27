@@ -1,0 +1,22 @@
+.manu{
+    display: flex;
+
+  gap: 10px;
+
+}
+.link{
+    text-decoration: none;
+    color: white;
+    position: relative;
+     top: 20px;
+      left: 30px;
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }

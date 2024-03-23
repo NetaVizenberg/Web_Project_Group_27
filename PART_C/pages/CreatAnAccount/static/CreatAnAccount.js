@@ -20,40 +20,38 @@ const onSubmit =(e)=>{
     e.preventDefault()
    const inputLength = document.querySelector('#phone-number')
 
-   if(emailInput.value===''||passWordInput.value===''||firstNameInput.value===''
-    ||lastNameInput.value===''||ageInput.value===''||phoneNumberInput.value===''){
+   if (emailInput.value === '' || passWordInput.value === '' || firstNameInput.value === ''
+        || lastNameInput.value === '' || ageInput.value === '' || phoneNumberInput.value === '') {
         if (inputLength.value.length !== 10) {
-        msg2.innerHTML = 'המספר חייב להכיל 10 ספרות '
-        msg2.classList.add('error2')
+            msg2.innerHTML = 'המספר חייב להכיל 10 ספרות ';
+            msg2.classList.add('error2');
+        } else {
+            msg2.innerHTML = '';
+            msg2.classList.remove('error2');
+        }
+
+        msg.innerHTML = 'בבקשה מלא את כל השדות';
+        msg.classList.add('error');
     } else {
-        msg2.innerHTML = ''
-        msg2.classList.remove('error2')
+        msg.innerHTML = '';
+        msg.classList.remove('error');
 
+        // Form is valid, submit it
+        myForm.submit();
+
+        const li = document.createElement('li');
+        li.innerHTML = `אימייל: ${emailInput.value} | סיסמא: ${passWordInput.value}`;
+        usersList.appendChild(li);
+
+        // Clear input fields
+        emailInput.value = '';
+        passWordInput.value = '';
+        firstNameInput.value = '';
+        lastNameInput.value = '';
+        ageInput.value = '';
+        phoneNumberInput.value = '';
     }
-
-
-      msg.innerHTML='בבקשה מלא את כל השדות'
-
-       msg.classList.add('error')
-
-    }else{
-       msg.innerHTML=''
-       msg.classList.remove('error')
-      const li =document.createElement('li')
-      li.innerHTML= `  אימייל :${emailInput.value }|  סיסמא:${passWordInput.value} `
-       usersList.appendChild(li)
-       emailInput.value=''
-       passWordInput.value=''
-       firstNameInput.value=''
-       lastNameInput.value=''
-       ageInput.value=''
-       phoneNumberInput.value=''
-
-
-
-    }
-
-}
+};
 
  myForm.addEventListener('submit',onSubmit)
  const validateInputs = (e) => {

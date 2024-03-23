@@ -82,20 +82,3 @@ li {
     background-color: #2d2828;
     color: white;
 }
-.link{
-    text-decoration: none;
-    color: white;
-    position: relative;
-  right: 640px;
-    bottom: 250px;
-    animation: fadeIn 1s ease-in-out;
-}
-@keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
