@@ -1,18 +1,20 @@
 {% extends 'base.html' %}
 {% block title %} מרשם {% endblock %}
-{% include('Prescription.html') %}
-{% block page_body_header_content %} צור חשבון {% endblock %}
+{% block page_head_css %} {% include('PrescriptionStyless.html') %}{% endblock %}
+{% block page_body_header_content %} מרשם {% endblock %}
 {% block page_body_main_content %}
-<form class="my-form" action="" method="get">
+
+<form class="my-form" action=" {{ url_for('Prescription.prescription') }}" method="POST">
     <h4 class="msg"> </h4>
      <label for="gram" class="my-group "> : כמות</label>
        <h4 class="msg2">  </h4>
-        <input id="gram"  class="my-group" type="number" name=" phone number">
+        <input id="gram"  class="my-group" type="number" name="amount ">
   <label for="MyCBD" class="my-group" >: CBD  </label>
     <h4 class="msg3" >  </h4>
-        <input id="MyCBD" class="my-group" type="number" name=" CBD">
+        <input id="MyCBD" class="my-group" type="number" name="CBD">
        <label class="my-group" >: THC  </label>
-         <h4 class="msg4">  </h4>   <input id="THC" class="my-group" type="number" name=" THC">
+         <h4 class="msg4">  </h4>
+    <input id="THC" class="my-group" type="number" name="THC">
   <label for="THC" class="my-group" > : צורה</label>
         <select  class="my-group" name="shape">
         <option  value=" flower"> פרח </option>
@@ -21,3 +23,5 @@
       <input id="btn" type="submit" value="הגש" >
      </form>
 {% endblock %}
+{% block page_body_js %} {% include('PrescriptionFunc.html') %} {% endblock %}
+

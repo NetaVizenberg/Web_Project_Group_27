@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
 {% block title %} צור חשבון {% endblock %}
-{% block page_head_css %} {% include('creatAnAccountstyless.html') %} {% endblock %}
+
+
 {% block page_body_header_content %} צור חשבון {% endblock %}
+
+
+
 {% block page_body_main_content %}
-   <div>  <form class="my-form" action="" method="get">
+<link rel="stylesheet" href="{{ url_for('CreatAnAccount.static', filename='CreatAnAccount.css')}}"/>
+<div>  <form class="my-form" action="{{ url_for('CreatAnAccount.creat_an_account') }}" method="POST">
        <label for="my-email" class="form-group" >   : דואר אלקטרוני</label>
       <h4 class=" msg"> </h4>
     <input  id="my-email" class="form-group"  type="email" name="email">
@@ -12,16 +17,16 @@
     <input class="form-group" id="my-password" type="password" name="password">
     <label class="form-group" for="first-name" >: שם פרטי</label>
       <h4 class="msg3"> </h4>
-        <input class="form-group" id="first-name" type="text" name="first name">
+        <input class="form-group" id="first-name" type="text" name="first_name">
      <label class="form-group" for="last-name" >: שם משפחה  </label>
        <h4 class=" msg4"> </h4>
-        <input class="form-group" id="last-name" type="text" name="last name">
+        <input class="form-group" id="last-name" type="text" name="last_name">
     <h4 class="msg6"> </h4>
      <label class="form-group" for="age" >  : גיל</label>
-       <input class="form-group"  id="age"  type="number" name=" age">
+       <input class="form-group"  id="age"  type="number" name="age">
    <h4 class=" msg2"> </h4>
         <label class="form-group" for="phone-number"  > : מספר טלפון </label>
-       <input class="form-group" id="phone-number" type="tel" name="phone-number">
+       <input class="form-group" id="phone-number" type="tel" name="phone_number">
 
 <div class = btn>
 
@@ -30,7 +35,8 @@
    </div>
     </form> </div>
 <ul class=" userslist"> </ul>
-
+<script src="{{ url_for('CreatAnAccount.static', filename='CreatAnAccount.js') }}"> </script>
 {% endblock %}
 
-{% block page_body_js %} {% include('creatAnAccountFunc.html') %}  {% endblock %}
+
+
