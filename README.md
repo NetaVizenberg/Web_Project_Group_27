@@ -19,5 +19,5 @@
 
 
 
-[Download PDF][PART_C.pdf](https://github.com/NetaVizenberg/Web_Project_Group_27/files/14894602/PART_C.pdf)
+[PART_C.pdf](https://github.com/NetaVizenberg/Web_Project_Group_27/files/14894602/PART_C.pdf)
 
