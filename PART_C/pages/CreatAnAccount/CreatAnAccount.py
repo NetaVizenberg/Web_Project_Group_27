@@ -1,5 +1,5 @@
-from flask import Blueprint, render_template, request, redirect, url_for
-from mongodrafts import user_col
+from flask import Blueprint, render_template, request, redirect, url_for,session
+from PART_C.mongodrafts import user_col
 CreatAnAccount = Blueprint(
     'CreatAnAccount', __name__,
     static_folder='static',  # Adjust if needed for static files
@@ -8,10 +8,6 @@ CreatAnAccount = Blueprint(
 )
 
 
-@CreatAnAccount.route('/')
-def index():
-    # Redirect to the registration form
-    return redirect(url_for('CreatAnAccount.creat_an_account'))
 
 
 @CreatAnAccount.route('/CreatAnAccount', methods=['GET', 'POST'])
@@ -51,8 +47,15 @@ def creat_an_account():
             }
 
             user_col.insert_one(new_user)
+            session['email'] = email
+            session['first_name'] = first_name
+            session['last_name'] = last_name
+            session['phone_number'] = phone_number
+
             print(f"Account for {email} created successfully.")
             # Redirect to the success page
+
+
             return redirect(url_for('CreatAnAccount.registration_success'))
         # Implement validation and error handling (important!)
         # Validate each field (email format, password strength, etc.)
@@ -64,7 +67,7 @@ def creat_an_account():
         # (e.g., create user account in database, send confirmation email)
 
         # For now, assume successful registration and redirect to a success page
-        return redirect(url_for('CreatAnAccount.registration_success'))
+
 
     # Handle other HTTP methods if needed (unlikely in this case)
 

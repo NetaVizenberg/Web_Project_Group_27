@@ -83,6 +83,10 @@ const validFirstname=(e)=>{
     if (!hebrewLetters.test(nameInput.value) &&  !englishLetters.test(nameInput.value) ){
         msg3.innerHTML='השם יכול להכיל רק אותיות באנגלית ובעברית בלבד '
          msg3.classList.add('error3')
+     } else if (nameInput.value.length < 2) {
+        msg3.innerHTML = 'השם חייב להכיל לפחות 2 תווים';
+        msg3.classList.add('error3');
+
        }else {
         msg3.innerHTML=''
          msg3.classList.remove('error3')
@@ -101,7 +105,10 @@ const  validLastName=(e)=>{
     if ( !hebrewLetters.test(nameInput.value) &&  !englishLetters.test(nameInput.value)){
         msg4.innerHTML='השם יכול להכיל רק אותיות באנגלית ובעברית בלבד'
          msg4.classList.add('error3')
-       }else {
+     } else if (nameInput.value.length < 2) {
+        msg4.innerHTML = 'השם חייב להכיל לפחות 2 תווים';
+        msg4.classList.add('error3');
+      }else {
         msg4.innerHTML= ''
         msg4.classList.remove('error3')
 
@@ -139,23 +146,20 @@ passWordInput.addEventListener('input', passwordLength )
 
 
 
-const validAge=(e)=>{
-    e.preventDefault()
+const validAge = (e) => {
+    e.preventDefault();
 
-  const age=document.querySelector('#age')
-    if(age.value < 0 ){
-        msg6.innerHTML='מספר לא תקין'
-        msg6.classList.add('error2')
-    }else {
-        msg6.innerHTML=''
-         msg6.classList.remove('error2')
+    const age = document.querySelector('#age');
+    if (age.value < 6) {
+        msg6.innerHTML = 'גיל לא תקין,יש להזין גיל שהוא 6 ומעלה';
+        msg6.classList.add('error2');
+    } else {
+        msg6.innerHTML = '';
+        msg6.classList.remove('error2');
     }
+};
 
-}
-
-
-
-ageInput.addEventListener('input',validAge)
+ageInput.addEventListener('input', validAge);
 
 
 

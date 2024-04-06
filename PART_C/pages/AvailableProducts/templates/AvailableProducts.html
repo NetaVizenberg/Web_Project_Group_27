@@ -1,11 +1,30 @@
 {% extends 'base.html' %}
 {% block title %} מוצרים פנויים {% endblock %}
-{% block page_head_css %} {% include('AvailableProductsStyless.html') %}{% endblock %}
+
 {% block page_body_header_content %} מוצרים פנויים  {% endblock %}
 
-
 {% block page_body_main_content %}
-
-
-
-{% endblock %}
+<link rel="stylesheet" href="{{ url_for('AvailableProducts.static', filename='AvailableProducts.css') }}"/>
+<div class="page-content"> <!-- Apply page-content class to the div -->
+  {% if product_name %}
+    <!-- Use image_base64 for the image source -->
+    {% if image_base64 %}
+      <img class="product-image" src="data:image/png;base64, {{ image_base64 }}" alt="Product Image">
+    {% else %}
+      <p>No image available</p>
+    {% endif %}
+    <p>{{ product_name }} : שם</p>
+  {% endif %}
+  <p>{% if amount %}כמות: {{ amount }}{% endif %}</p>
+  <p> {{ cbd }}: CBD</p>
+  <p> {{ thc }}: THC</p>
+  {% if shape == 'פרח' %}
+    <p>צורה: פרח</p>
+  {% elif shape == 'שמן' %}
+    <p>צורה: שמן</p>
+  {% endif %}
+  <!-- Add any other content or logic here -->
+  <button class="btn1" onclick="purchaseProduct()">קנייה</button>
+</div>
+<script src="{{ url_for('AvailableProducts.static', filename='AvailableProducts.js') }}"> </script>
+{% endblock %}  <!-- Closing the page_body_main_content block -->

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %} החשבון שלי {% endblock %}
+{% block page_body_header_content %} החשבון שלי   {% endblock %}
+{% block page_body_main_content %}
+<link rel="stylesheet" href="{{ url_for('MyAccount.static', filename='MyAccount.css')}}"/>
+<form action="" method="get"   class="my-form">
+    <h5 class = msg> </h5>
+      <label  class="form-group" id="email" for="email-box" > : דואר אלקטרוני </label>
+
+          <input class="form-group" id="email-box" type="email" name="email">
+ <h5 class="msg2"> </h5>
+      <label class="form-group" for="my-password" id="password-lable" > : סיסמא</label>
+       <input class="form-group" id="my-password" type="password" name="password">
+
+ <input class="form-group"  id="btn" type="submit" value="כניסה">
+
+
+
+
+  </form>
+
+    <div class="per1 ">
+      <label id="sentance"> עדיין  אין לך משתמש ? ניתן להרשם</label>
+     <a href="/CreatAnAccount ">כאן</a>
+
+   </div>
+
+
+
+</main>
+
+<script src="{{ url_for('MyAccount.static', filename='MyAccount.js') }}"> </script>
+{% endblock %}

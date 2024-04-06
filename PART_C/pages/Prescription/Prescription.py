@@ -1,5 +1,5 @@
-from flask import Blueprint, render_template, redirect, url_for, request
-from mongodrafts import products_col
+from flask import Blueprint, render_template, request, redirect, url_for,session
+from PART_C.mongodrafts import products_col
 
 Prescription = Blueprint(
     'Prescription', __name__,
@@ -9,32 +9,37 @@ Prescription = Blueprint(
 )
 
 
-@Prescription.route('/')
-def index():
-    # Redirect to the registration form
-    return redirect(url_for('Prescription.prescription'))
-
-
 @Prescription.route('/Prescription', methods=['GET', 'POST'])
 def prescription():
-    if request.method == 'POST':
-
-        # Extract CBD and THC values from the form submission
+    if request.method == 'GET':
+        # Render the prescription form
+        return render_template('Prescription.html')
+    elif request.method == 'POST':
+        # Process form submission
+        amount_str = request.form.get('amount')
         cbd_str = request.form.get('CBD')
         thc_str = request.form.get('THC')
+        shape_str = request.form.get('shape')  # Get the shape value from the form
 
-        # Convert CBD and THC values to integers
-        cbd = int(cbd_str)
-        thc = int(thc_str)
+        # Convert strings to integers
+        session['amount'] = int(amount_str) if amount_str else None
+        session['cbd'] = int(cbd_str) if cbd_str else None
+        session['thc'] = int(thc_str) if thc_str else None
+        session['shape'] = shape_str if shape_str else None
 
-        # Query the database for the product
-        existing_product = products_col.find_one({'CBD': cbd, 'THC': thc})
+        # Retrieve values from session
+        amount = session.get('amount')
+        cbd = session.get('cbd')
+        thc = session.get('thc')
+        shape = session.get('shape')
 
-        if existing_product:
-            # If product found, redirect to AvailableProducts page with product information
-            return redirect(url_for('AvailableProducts', product_id=existing_product['_id']))
-        else:
-            # If product not found, display a message
-            print("product not found")
-            return render_template('Prescription.html', message="Product not found.")
+        if cbd is not None and thc is not None:
+            existing_product = products_col.find_one({'CBD': cbd, 'THC': thc})
+            if existing_product:
+                # If product found, redirect to AvailableProducts page with product information
+                return redirect(url_for('AvailableProducts.available_products'))
+
+        # If product not found or missing CBD and THC values, display a message
+        message = "המוצר לא נמצא "
+        return render_template('Prescription.html', message=message)
 

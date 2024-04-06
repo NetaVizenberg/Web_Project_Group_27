@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %} עמוד  הבית{% endblock %}
+{% block page_body_header_content %} CannaReview {% endblock %}
+{% block page_body_main_content %}
+<link rel="stylesheet" href="{{ url_for('HomePage.static', filename='HomePage.css')}}"/>
+
+<div class="manu">
+     <a class="button" id="contact" href="/MyAccount">החשבון שלי</a>
+    <a class="button" id="acount" href="/ContactUs"> צור קשר</a>
+    <a class="button"  id="review" href="/Review">  ביקורת </a>
+      <a class="button" id="perscription" href="/Prescription" > מרשם </a>
+    <a class="button" id="followUs" href="/FollowUs" > עקוב אחרינו </a>
+
+</div>
+{% endblock %}
+
+
+

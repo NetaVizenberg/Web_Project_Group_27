@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}  צור קשר {% endblock %}
+{% block page_body_header_content %} צור קשר   {% endblock %}
+{% block page_body_main_content %}
+<link rel="stylesheet" href="{{ url_for('ContactUs.static', filename='ContactUs.css')}}"/>
+ <div>
+        <form class="my-form">
+
+            <div class="container">
+
+                <div class="center-left">
+                    <div class="item">
+                       <h5 class='msg2'> </h5>
+                        <label  for="input-1" id="lable1">: מספר טלפון </label>
+                    </div>
+                    <div class="item">
+
+                        <input id="input-1" type="tel" name="phone number">
+                    </div>
+                </div>
+                <div class="center-right">
+                    <div class="item">
+                        <label for="input-2" id="lable2">: שם </label>
+                    </div>
+                    <div class="item">
+                        <h5 class="msg3"> </h5>
+                        <input id="input-2" type="text" name=" name ">
+                    </div>
+                </div>
+            </div>
+            <div class="container2">
+                <div class="my-mail">
+                    <div class="item1">
+                        <label for="input3" id="lable3">: דואר אלקטרוני </label>
+                    </div>
+                    <div class="item1">
+                        <input id="input3" type="email" name="mail">
+                    </div>
+                </div>
+                <div class="my-text">
+                    <div class="item1">
+                        <label for="my-message" id="text">: הודעה </label>
+                    </div>
+                    <div class="item1">
+                        <textarea id="my-message" name="message"></textarea>
+                    </div>
+                </div>
+            </div>
+            <h4 class="msg">   </h4>
+            <button  onclick="">חזרה</button>
+            <input class="btn" type="submit" value="שליחת הודעה">
+        </form>
+    </div>
+  <aside>
+
+</aside>
+
+<script src="{{ url_for('ContactUs.static', filename='ContactUs.js') }}"> </script>
+{% endblock %}

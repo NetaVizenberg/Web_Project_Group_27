@@ -1,0 +1,15 @@
+.navigation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+     /* Add your desired background color */
+    padding: 10px 0; /* Add padding as needed */
+}
+
+.navigation a {
+    display: inline-block; /* Display links horizontally */
+    margin-right: 10px; /* Adjust spacing between links */
+    text-decoration: none;
+    color: white;
+}

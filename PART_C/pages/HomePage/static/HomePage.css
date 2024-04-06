@@ -4,24 +4,28 @@
 }
 body {
   background-image: url("pics/img.png");
+}
+.navigation a{
+    display:none;
 
 }
-.headline{
+
+
+
+
+.page-header{
 
     display: grid;
     color: #eaff82;
     justify-content: center;
-    padding: 5px
-}
-
-.headline{
+    padding: 5px;
     position: relative;
     top: 30px;
     font-size:40px ;
 
-
-
 }
+
+
 
 .manu{
     display: grid;

@@ -1,0 +1,6 @@
+1)flask
+2)os
+3)pymongo
+4)bson
+5)dotenv
+6)base64

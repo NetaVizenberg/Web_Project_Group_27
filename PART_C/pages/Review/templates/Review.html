@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %} ביקורת {% endblock %}
+
+{% block page_body_header_content %} ביקורת {% endblock %}
+{% block page_body_main_content %}
+ <link rel="stylesheet" href="{{ url_for('Review.static', filename='Review.css')}}"/>
+<form class="my-form" action="" method="get">
+
+        <label for="name"  class="my-group "> : שם </label>
+     <h4 class="msg2"> </h4>
+      <input id="name" class="my-group " type="text" name=" first name and last name">
+
+    <label for="text" class="my-group "> : ביקורת</label>
+    <textarea id="text" class="my-group " name="message">
+    </textarea>
+
+
+<label for="grade" class="my-group ">  : ציון</label>
+    <h4 class="msg3"> </h4>
+     <input id="grade" class="my-group " type="number" name=" grade">
+<h4 class="msg"> </h4>
+        <div class="btn">
+
+          <button onclick="">חזרה</button>
+   <input id="in" type="submit" value="שלח ביקורת">
+
+   </div>
+   </form>
+
+<script src="{{ url_for('Review.static', filename='Review.js') }}"> </script>
+
+
+{% endblock %}
+

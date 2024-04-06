@@ -1,8 +1,11 @@
+import os
 import pymongo
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
+from settings import DB_URI
+from bson import Binary
 
-uri = "mongodb+srv://netavizenberg:netavizenberg@cluster0.bnm5gta.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+uri = DB_URI
 # Create a new client and connect to the server
 cluster = MongoClient(uri, server_api=ServerApi('1'))
 # Send a ping to confirm a successful connection
@@ -13,23 +16,38 @@ user_col = mydb['users']
 
 
 def insert_products():
-    product = [
-        {'שם': 'Green Dream', 'כמות': 5,  'CBD': 5, 'THC': 15,'צורה': 'פרח', 'דירוג': 7},
-        {'שם': 'Pineapple Haze', 'כמות': 10,  'CBD': 2, 'THC': 20,'צורה': 'שמן', 'דירוג': 8},
-        {'שם': 'Kush Blush', 'כמות': 3, 'CBD': 8,'THC': 10,  'צורה': 'פרח', 'דירוג': 6},
-        {'שם': 'Chronic Cloud', 'כמות': 8,  'CBD': 6, 'THC': 18,'צורה': 'שמן', 'דירוג': 9},
-        {'שם': 'Sativa Serenity', 'כמות': 12, 'CBD': 3,'THC': 25,  'צורה': 'פרח', 'דירוג': 7},
-        {'שם': 'Indica Oasis', 'כמות': 6, 'CBD': 10,'THC': 12,  'צורה': 'שמן', 'דירוג': 8},
-        {'שם': 'Lemon Skunk', 'כמות': 4, 'CBD': 12,'THC': 8,  'צורה': 'פרח', 'דירוג': 5},
-        {'שם': 'Blueberry Bliss', 'כמות': 15, 'CBD': 4,'THC': 22,  'צורה': 'שמן', 'דירוג': 10},
-        {'שם': 'Northern Lights Nirvana', 'כמות': 7, 'CBD': 7,'THC': 16,  'צורה': 'פרח', 'דירוג': 7},
-        {'שם': 'Purple Kush Paradise', 'כמות': 9, 'CBD': 9,'THC': 14,  'צורה': 'שמן', 'דירוג': 8},
+    products = [
+        {'שם': 'Green Dream', 'כמות': 5, 'CBD': 5, 'THC': 15, 'צורה': 'פרח', 'דירוג': 7, 'תמונה': 'Green Dream.jpg'},
+        {'שם': 'Pineapple Haze', 'כמות': 10, 'CBD': 2, 'THC': 20, 'צורה': 'שמן', 'דירוג': 8, 'תמונה': 'Pineapple Haze.jpg'},
+        {'שם': 'Kush Blush', 'כמות': 3, 'CBD': 8, 'THC': 10, 'צורה': 'פרח', 'דירוג': 6, 'תמונה': 'Kush Blush.jpg'},
+        {'שם': 'Chronic Cloud', 'כמות': 8, 'CBD': 6, 'THC': 18, 'צורה': 'שמן', 'דירוג': 9,'תמונה':'Chronic Cloud.png'},
+        {'שם': 'Sativa Serenity', 'כמות': 12, 'CBD': 3, 'THC': 25, 'צורה': 'פרח', 'דירוג': 7,'תמונה': 'Sativa Serenity.png'},
+        {'שם': 'Indica Oasis', 'כמות': 6, 'CBD': 10, 'THC': 12, 'צורה': 'שמן', 'דירוג': 8,'תמונה': 'Indica Oasis.png'},
+        {'שם': 'Lemon Skunk', 'כמות': 4, 'CBD': 12, 'THC': 8, 'צורה': 'פרח', 'דירוג': 5, 'תמונה': 'Lemon Skunk.png'},
+        {'שם': 'Blueberry Bliss', 'כמות': 15, 'CBD': 4, 'THC': 22, 'צורה': 'שמן', 'דירוג': 10,'תמונה': 'Blueberry Bliss.png'},
+        {'שם': 'Northern Lights Nirvana', 'כמות': 7, 'CBD': 7, 'THC': 16, 'צורה': 'פרח', 'דירוג': 7,'תמונה': 'Northern Lights Nirvana.png' },
+        {'שם': 'Purple Kush Paradise', 'כמות': 9, 'CBD': 9, 'THC': 14, 'צורה': 'פרח', 'דירוג': 8,'תמונה': 'Purple Kush Paradise.png'},
     ]
+    for product in products:
+        image_filename = product['תמונה']
+        image_path = os.path.join(os.path.dirname(__file__),'pics','Images' , image_filename)
+        print(f"Checking image path: {image_path}")  # Debugging statement
+        if os.path.exists(image_path):
+            with open(image_path, 'rb') as image_file:
+                # Read the image file as binary data
+                image_binary = Binary(image_file.read())
+                # Update the product data to include the image binary
+                product['תמונה'] = image_binary
+                # Insert the product data into MongoDB
+                products_col.insert_one(product)
+                print(f"Product '{product['שם']}' inserted successfully.")
+        else:
+            print(f"Image not found for product '{product['שם']}' at path: {image_path}")
 
-    products_col.insert_many(product)
+    # Call the function to insert products
 
-    print("Products inserted successfully.")
 #insert_products()
+
 # Call the function to insert products
 #insert_products()
 #products_col.drop()
@@ -88,7 +106,7 @@ def insert_users():
 
 def drop_all_users():
     # Use drop() to remove the entire 'users' collection
-   # user_col.drop()
+    user_col.drop()
 
     print("'users' collection dropped successfully.")
 #drop_all_users()
